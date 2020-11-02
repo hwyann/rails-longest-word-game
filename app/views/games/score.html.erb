@@ -1,0 +1,11 @@
+<h1>Result</h1>
+    <% if @check == @word_array %>
+      <p>"Sorry but <strong><%= params[:word] %></strong> cannot be built out of <strong><em><%= params[:letters] %></em></strong>!"</p>
+    <% elsif @dictionary["found"] %>
+      <p><strong>"Congratulations!</strong> It is a valid word."</p>
+      <p>Score: <%= @score %></p>
+      <p>Grand Score: <%= @grand_score %></p>
+    <% else %>
+      <p>"Sorry but <strong><%= params[:word] %></strong> does not seem to be a valid word..."</p>
+    <% end %>
+<%= link_to 'Play again', '/new' %>
